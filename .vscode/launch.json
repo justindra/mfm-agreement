@@ -10,6 +10,12 @@
       "console": "integratedTerminal",
       "skipFiles": ["<node_internals>/**"],
       "env": {}
+    },
+    {
+      "command": "./apps/web/node_modules/.bin/astro dev",
+      "name": "Development server",
+      "request": "launch",
+      "type": "node-terminal"
     }
   ]
 }

@@ -13,7 +13,7 @@ async function fetchYoutube<TResponse>(
   url: string,
   params: Record<string, string | number | boolean | undefined>
 ) {
-  const searchUrl = new URL(url);
+  const searchUrl = new URL(`https://youtube.googleapis.com/youtube/v3/${url}`);
   // Set the API Key
   searchUrl.searchParams.set('key', Config.GOOGLE_API_KEY);
 
@@ -52,7 +52,7 @@ export async function getAllVideoIdsInPlaylist(
   pageToken?: string
 ) {
   const searchRes = await fetchYoutube<PlaylistItemResponse>(
-    'https://www.googleapis.com/youtube/v3/playlistItems',
+    'playlistItems',
     {
       playlistId,
       part: 'id,contentDetails,status',
@@ -99,7 +99,7 @@ type VideoListItem = {
 export async function getAllVideoDurations(ids: string[]) {
   const res = await fetchYoutube<
     APIResponse<'youtube#videoListResponse', VideoListItem>
-  >('https://youtube.googleapis.com/youtube/v3/videos', {
+  >('videos', {
     part: 'id,contentDetails',
     id: ids.join(','),
   });
@@ -148,7 +148,7 @@ type ChannelListItem = {
 export async function getChannelDetails(channelId: string) {
   const res = await fetchYoutube<
     APIResponse<'youtube#channelListResponse', ChannelListItem>
-  >('https://youtube.googleapis.com/youtube/v3/channels', {
+  >('channels', {
     part: 'id,snippet,statistics',
     id: channelId,
   });

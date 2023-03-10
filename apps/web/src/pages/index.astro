@@ -1,0 +1,165 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Logo from '../assets/logo.png';
+import DividerLine from '../assets/line.png';
+---
+
+<Layout title='Welcome to Astro.'>
+  <main class='max-w-4xl mx-auto p-8'>
+    <img
+      src={Logo}
+      alt='My First Million Agreement Logo'
+      class='max-w-full md:max-w-md mx-auto'
+    />
+    <h1 class='text-3xl md:text-5xl text-center font-serif-title my-8'>
+      The Gentleman's Agreement
+    </h1>
+    <p class='max-w-prose text-xl text-center mx-auto my-4'>
+      Are you ready to enter into a dynamic gentleman's agreement that will take
+      your video content to the next level? Look no further! Two parties have
+      come together to create a partnership that will benefit everyone involved.
+    </p>
+    <p class='max-w-prose text-xl text-center mx-auto my-4'>
+      The first party, a talented content creator, is committing to producing
+      awe-inspiring video content that will engage, inform, and entertain their
+      audience. With a keen eye for detail and an unwavering passion for their
+      craft, they are determined to create content that stands out from the
+      crowd. From scripting to shooting and editing, they'll be putting in every
+      ounce of effort to make the videos top-notch.
+    </p>
+    <p class='max-w-prose text-xl text-center mx-auto my-4'>
+      The second party, a fervent fan, is committing to hitting that "subscribe"
+      button on the content creator's YouTube channel, showing their loyalty and
+      support. As a subscriber, they will stay updated on the latest content and
+      engage with it in every way possible - liking, commenting, sharing, and
+      spreading the word. They'll encourage others to join the community and
+      support the content creator in every way they can.
+    </p>
+    <p class='max-w-prose text-xl text-center mx-auto my-4'>
+      This is not just any gentleman's agreement; it's an exciting and
+      exhilarating partnership that will bring out the best in both parties.
+      With a shared goal of producing and enjoying the finest video content, the
+      sky's the limit. So what are you waiting for? Let's get started and make
+      some magic!
+    </p>
+
+    <h2 class='text-2xl md:text-4xl text-center font-serif-title my-8'>
+      Current Stats
+    </h2>
+    <div class='grid gap-4 grid-cols-2 grid-rows-2 max-w-lg mx-auto my-8'>
+      <div class='bg-red-900 p-4 rounded-bl-3xl rounded-tr-3xl'>
+        <p class='text-xs font-serif-title'>Episodes</p>
+        <p class='text-5xl text-right'>284</p>
+      </div>
+      <div class='bg-blue-900 p-4 rounded-br-3xl rounded-tl-3xl'>
+        <p class='text-xs font-serif-title text-right'>Subscribers</p>
+        <p class='text-5xl text-left'>100k</p>
+      </div>
+      <div class='bg-red-900 p-4 rounded-tl-3xl rounded-br-3xl'>
+        <p class='text-xs font-serif-title'>Content Length</p>
+        <p class='text-5xl text-right max-w-full'>
+          5<span class='text-xs'>d</span>20<span class='text-xs'>h</span><span
+            class='hidden md:inline'>40<span class='text-xs'>m</span></span
+          ><span class='hidden lg:inline'>18<span class='text-xs'>s</span></span
+          >
+        </p>
+      </div>
+      <div class='bg-blue-900 p-4 rounded-tr-3xl rounded-bl-3xl'>
+        <p class='text-xs text-right font-serif-title'>Fan Time</p>
+        <p class='text-5xl text-left max-w-full'>
+          5<span class='text-xs'>d</span>20<span class='text-xs'>h</span><span
+            class='hidden md:inline'>40<span class='text-xs'>m</span></span
+          ><span class='hidden lg:inline'>18<span class='text-xs'>s</span></span
+          >
+        </p>
+      </div>
+    </div>
+    <p class='text-center text-base opacity-75'>
+      <a class='underline underline-offset-2' href='#'
+        >Click here to learn more about this data.</a
+      >
+    </p>
+    <h2 class='text-2xl md:text-4xl text-center font-serif-title my-8'>
+      The Slacker
+    </h2>
+    <p class='max-w-prose text-xl text-center mx-auto my-4'>
+      So, based on the data, who is the slacker that needs to start picking up
+      their game to honor their end of the agreement?
+    </p>
+    <div class='bg-blue-900 p-4 rounded-tr-3xl rounded-bl-3xl'>
+      <p class='text-5xl text-center max-w-full mb-4 font-serif-title'>
+        The Fans
+      </p>
+      <p class='text-xls text-center max-w-full'>
+        <strong>1,000</strong> more fans need to subscribe to even out the agreement.
+      </p>
+    </div>
+    <div class='bg-red-900 p-4 rounded-tr-3xl rounded-bl-3xl'>
+      <p class='text-5xl text-center max-w-full mb-4 font-serif-title'>
+        Sam & Shaan
+      </p>
+      <p class='text-xls text-center max-w-full'>
+        Sam & Shaan need to produce <strong
+          >5 hours 20 minutes 18 seconds</strong
+        > worth of content on YouTube to even out the agreement.
+      </p>
+    </div>
+  </main>
+  <footer class='p-8'>
+    <img
+      class='max-w-full md:max-w-md mx-auto'
+      src={DividerLine}
+      alt='Divider line'
+    />
+    <p class='text-center text-base opacity-75'>Made by Justin Rahardjo</p>
+    <p class='text-center text-base opacity-75'>
+      All artworks created through Midjourney.
+    </p>
+  </footer>
+</Layout>
+
+<style>
+  /* main {
+		margin: auto;
+		padding: 1.5rem;
+		max-width: 60ch;
+	} */
+  /* h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		margin: 0;
+	} */
+  /* .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+  .instructions {
+    line-height: 1.6;
+    margin: 1rem 0;
+    border: 1px solid rgba(var(--accent), 25%);
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.4rem;
+  }
+  .instructions code {
+    font-size: 0.875em;
+    font-weight: bold;
+    background: rgba(var(--accent), 12%);
+    color: rgb(var(--accent));
+    border-radius: 4px;
+    padding: 0.3em 0.45em;
+  }
+  .instructions strong {
+    color: rgb(var(--accent));
+  }
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 1rem;
+    padding: 0;
+  } */
+</style>

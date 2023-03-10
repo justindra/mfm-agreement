@@ -1,5 +1,9 @@
 {
   "search.exclude": {
     "**/.sst": true
+  },
+  "prettier.documentSelectors": ["**/*.astro"],
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
