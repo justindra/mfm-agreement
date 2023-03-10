@@ -7,11 +7,13 @@
     "typecheck": "tsc -noEmit"
   },
   "devDependencies": {
-    "@types/node": "^18.15.0",
     "@types/aws-lambda": "^8.10.111",
-    "sst": "^2.1.23"
+    "@types/lodash.chunk": "^4.2.7",
+    "@types/node": "^18.15.0"
   },
   "dependencies": {
-    "sst": "^2.1.23"
+    "lodash.chunk": "^4.2.0",
+    "sst": "^2.1.23",
+    "tinyduration": "^3.2.4"
   }
 }

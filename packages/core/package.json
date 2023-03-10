@@ -7,11 +7,12 @@
     "typecheck": "tsc -noEmit"
   },
   "devDependencies": {
-    "vitest": "^0.29.2",
     "@types/node": "^18.15.0",
-    "sst": "^2.1.23"
+    "vitest": "^0.29.2"
   },
   "dependencies": {
-    "sst": "^2.1.23"
+    "node-fetch": "^3.3.0",
+    "sst": "^2.1.23",
+    "tinyduration": "^3.2.4"
   }
 }
