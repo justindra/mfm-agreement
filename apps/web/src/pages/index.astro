@@ -1,4 +1,7 @@
 ---
+import { MFM_CHANNEL_ID } from '@mfm-agreement/core/constants';
+import { getLatestYouTubeData } from '@mfm-agreement/core/data';
+import { format } from 'date-fns';
 import Layout from '../layouts/Layout.astro';
 import Logo from '../assets/logo.png';
 import DividerLine from '../assets/line.png';
@@ -11,32 +14,7 @@ import SlackerCard from '../components/slacker/card.astro';
 import Modal from '../components/info-modal/modal';
 import { Link } from '../components/typography/link';
 
-const data = {
-  episodes: 284,
-  subscribers: 2100000,
-  contentLength: {
-    days: 5,
-    hours: 20,
-    minutes: 40,
-    seconds: 18,
-  },
-  fanTime: {
-    days: 5,
-    hours: 20,
-    minutes: 40,
-    seconds: 18,
-  },
-  slacker: {
-    type: 'mfm' as any,
-    fans: 1000,
-    mfm: {
-      days: 0,
-      hours: 5,
-      minutes: 20,
-      seconds: 18,
-    },
-  },
-};
+const data = await getLatestYouTubeData(MFM_CHANNEL_ID);
 ---
 
 <Layout title="The Gentleman's Agreement | My First Million">
@@ -98,9 +76,16 @@ const data = {
       So, based on the data, who is the slacker that needs to start picking up
       their game to honor their end of the agreement?
     </P>
-    <SlackerCard {...data.slacker} />
+    <SlackerCard
+      type={data.slackerType as any}
+      fans={data.slackerResults?.fans}
+      mfm={data.slackerResults?.mfm}
+    />
   </main>
   <footer class='p-8'>
+    <p class='text-center text-base opacity-75'>
+      Last updated on {format(new Date(data.date), 'PPPp')}
+    </p>
     <img
       class='max-w-full md:max-w-md mx-auto'
       src={DividerLine}

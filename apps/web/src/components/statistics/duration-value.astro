@@ -13,7 +13,7 @@ const { value } = Astro.props as Props;
     Boolean(value.days) && (
       <>
         {value.days}
-        <span class='text-xs'>d</span>
+        <span class='text-sm mr-2'>d</span>
       </>
     )
   }
@@ -21,7 +21,7 @@ const { value } = Astro.props as Props;
     Boolean(value.hours) && (
       <>
         {value.hours}
-        <span class='text-xs'>h</span>
+        <span class='text-sm mr-2'>h</span>
       </>
     )
   }
@@ -29,7 +29,7 @@ const { value } = Astro.props as Props;
     Boolean(value.minutes) && (
       <>
         {value.minutes}
-        <span class='text-xs'>m</span>
+        <span class='text-sm mr-2'>m</span>
       </>
     )
   }
@@ -37,7 +37,7 @@ const { value } = Astro.props as Props;
     Boolean(value.seconds) && (
       <>
         {value.seconds}
-        <span class='text-xs'>s</span>
+        <span class='text-sm mr-2'>s</span>
       </>
     )
   }

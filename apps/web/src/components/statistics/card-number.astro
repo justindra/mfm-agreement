@@ -5,12 +5,17 @@ import StatisticsCard from './card.astro';
 
 export interface Props {
   label: string;
-  value: number;
+  value?: number;
   isMFM: boolean;
   class?: HTMLAttributes<'div'>['class'];
 }
 
-const { label, value, isMFM, class: propContainerClass } = Astro.props as Props;
+const {
+  label,
+  value = 0,
+  isMFM,
+  class: propContainerClass,
+} = Astro.props as Props;
 
 const numeralValue = numeral(value).format('0a');
 ---

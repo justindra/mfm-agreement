@@ -2,9 +2,10 @@
   "name": "web",
   "type": "module",
   "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
+    "dev": "sst bind 'astro dev'",
+    "start": "sst bind 'astro dev'",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
@@ -17,6 +18,8 @@
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "astro": "^2.1.2",
+    "astro-sst": "^2.1.24",
+    "date-fns": "^2.29.3",
     "numeral": "^2.0.6",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",

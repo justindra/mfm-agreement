@@ -51,15 +51,14 @@ export async function getAllVideoIdsInPlaylist(
   playlistId: string,
   pageToken?: string
 ) {
-  const searchRes = await fetchYoutube<PlaylistItemResponse>(
-    'playlistItems',
-    {
-      playlistId,
-      part: 'id,contentDetails,status',
-      maxResults: 50,
-      pageToken: pageToken,
-    }
-  );
+  const searchRes = await fetchYoutube<PlaylistItemResponse>('playlistItems', {
+    playlistId,
+    part: 'id,contentDetails,status',
+    maxResults: 50,
+    pageToken: pageToken,
+  });
+
+  // console.log(searchRes);
 
   // Set the ids
   const ids = searchRes.items
@@ -69,7 +68,10 @@ export async function getAllVideoIdsInPlaylist(
 
   // If there is a next page token, then we want to get the ids from that page too
   if (searchRes.nextPageToken) {
-    const nextIds = await getAllVideoIdsInPlaylist(searchRes.nextPageToken);
+    const nextIds = await getAllVideoIdsInPlaylist(
+      playlistId,
+      searchRes.nextPageToken
+    );
     ids.push(...nextIds);
   }
   // Return the ids

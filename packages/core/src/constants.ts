@@ -1,0 +1,4 @@
+export const MFM_CHANNEL_ID = 'UCyaN6mg5u8Cjy2ZI4ikWaug';
+export const MFM_FULL_EPISODE_PLAYLIST_ID =
+  'PLWloxQyF_2n4aCanY4Y45HLTY2zoeZF8U';
+export const TIME_IT_TAKES_TO_SUBSCRIBE_SECONDS = 12;

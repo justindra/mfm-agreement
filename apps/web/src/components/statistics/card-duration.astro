@@ -6,12 +6,17 @@ import StatisticsCardDurationValue from './duration-value.astro';
 
 export interface Props {
   label: string;
-  value: Duration;
+  value?: Duration;
   isMFM: boolean;
   class?: HTMLAttributes<'div'>['class'];
 }
 
-const { label, value, isMFM, class: propContainerClass } = Astro.props as Props;
+const {
+  label,
+  value = {},
+  isMFM,
+  class: propContainerClass,
+} = Astro.props as Props;
 
 const hourRoundDuration: Duration = {
   ...value,
