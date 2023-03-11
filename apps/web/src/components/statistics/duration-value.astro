@@ -1,0 +1,44 @@
+---
+import type { Duration } from 'tinyduration';
+
+export interface Props {
+  value: Duration;
+}
+
+const { value } = Astro.props as Props;
+---
+
+<>
+  {
+    Boolean(value.days) && (
+      <>
+        {value.days}
+        <span class='text-xs'>d</span>
+      </>
+    )
+  }
+  {
+    Boolean(value.hours) && (
+      <>
+        {value.hours}
+        <span class='text-xs'>h</span>
+      </>
+    )
+  }
+  {
+    Boolean(value.minutes) && (
+      <>
+        {value.minutes}
+        <span class='text-xs'>m</span>
+      </>
+    )
+  }
+  {
+    Boolean(value.seconds) && (
+      <>
+        {value.seconds}
+        <span class='text-xs'>s</span>
+      </>
+    )
+  }
+</>

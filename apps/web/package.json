@@ -10,8 +10,20 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/react": "^2.1.0",
     "@astrojs/tailwind": "^3.1.0",
+    "@headlessui/react": "^1.7.13",
+    "@heroicons/react": "^2.0.16",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
     "astro": "^2.1.2",
-    "tailwindcss": "^3.0.24"
+    "numeral": "^2.0.6",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "tailwindcss": "^3.0.24",
+    "tinyduration": "^3.2.4"
+  },
+  "devDependencies": {
+    "@types/numeral": "^2.0.2"
   }
 }

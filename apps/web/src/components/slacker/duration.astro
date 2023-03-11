@@ -1,0 +1,16 @@
+---
+import type { Duration } from 'tinyduration';
+
+export interface Props {
+  value: Duration;
+}
+
+const { value } = Astro.props as Props;
+---
+
+<>
+  {Boolean(value.days) && <>{value.days} days</>}{' '}
+  {Boolean(value.hours) && <>{value.hours} hours</>}{' '}
+  {Boolean(value.minutes) && <>{value.minutes} minutes</>}{' '}
+  {Boolean(value.seconds) && <>{value.seconds} seconds</>}
+</>

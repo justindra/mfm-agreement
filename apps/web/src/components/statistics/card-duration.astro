@@ -1,0 +1,47 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import type { Duration } from 'tinyduration';
+import StatisticsCard from './card.astro';
+import StatisticsCardDurationValue from './duration-value.astro';
+
+export interface Props {
+  label: string;
+  value: Duration;
+  isMFM: boolean;
+  class?: HTMLAttributes<'div'>['class'];
+}
+
+const { label, value, isMFM, class: propContainerClass } = Astro.props as Props;
+
+const hourRoundDuration: Duration = {
+  ...value,
+  hours: value.minutes
+    ? Math.round((value.hours || 0) + value.minutes / 60)
+    : undefined,
+  minutes: undefined,
+  seconds: undefined,
+};
+
+const minuteRoundDuration: Duration = {
+  ...value,
+  minutes: value.seconds
+    ? Math.round(value.minutes || 0 + value.seconds / 60)
+    : undefined,
+  seconds: undefined,
+};
+---
+
+<StatisticsCard label={label} isMFM={isMFM} class={propContainerClass}>
+  <!-- Full - show from lg upwards -->
+  <span class='hidden md:inline'>
+    <StatisticsCardDurationValue value={value} />
+  </span>
+  <!-- To minutes - show from md upwards -->
+  <span class='hidden sm:inline md:hidden'>
+    <StatisticsCardDurationValue value={minuteRoundDuration} />
+  </span>
+  <!-- To hours - show from sm upwards -->
+  <span class='sm:hidden'>
+    <StatisticsCardDurationValue value={hourRoundDuration} />
+  </span>
+</StatisticsCard>

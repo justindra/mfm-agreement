@@ -1,0 +1,22 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+export interface Props {
+  label: string;
+  isMFM: boolean;
+  class?: HTMLAttributes<'div'>['class'];
+}
+
+const { label, isMFM, class: propContainerClass } = Astro.props as Props;
+
+const containerClasses = isMFM ? 'bg-red-800' : 'bg-blue-700';
+const labelClasses = isMFM ? 'text-left' : 'text-right';
+const valueClasses = isMFM ? 'text-right' : 'text-left';
+---
+
+<div class={`${containerClasses} ${propContainerClass} p-4`}>
+  <p class={`${labelClasses} text-xs font-serif-title`}>{label}</p>
+  <p class={`${valueClasses} text-5xl`}>
+    <slot />
+  </p>
+</div>

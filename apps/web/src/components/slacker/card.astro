@@ -1,0 +1,39 @@
+---
+import type { Duration } from 'tinyduration';
+import DurationString from './duration.astro';
+
+export interface Props {
+  type: 'mfm' | 'fans';
+  fans?: number;
+  mfm?: Duration;
+}
+
+const { type, fans, mfm } = Astro.props as Props;
+
+const isMFM = type === 'mfm';
+
+const containerClasses = isMFM ? 'bg-red-800' : 'bg-blue-700';
+---
+
+<div
+  class={`${containerClasses} p-4 rounded-tr-3xl rounded-bl-3xl max-w-lg mx-auto`}>
+  <p class='text-3xl text-center max-w-full mb-4 font-serif-title'>
+    {isMFM ? 'Sam & Shaan' : 'The Fans'}
+  </p>
+  {
+    isMFM ? (
+      <p class='text-xls text-center max-w-full'>
+        Sam & Shaan need to produce{' '}
+        <strong>
+          <DurationString value={mfm || {}} />
+        </strong>{' '}
+        worth of content on YouTube to even out the agreement.
+      </p>
+    ) : (
+      <p class='text-xls text-center max-w-full'>
+        <strong>{fans || 0}</strong> more fans need to subscribe to even out the
+        agreement.
+      </p>
+    )
+  }
+</div>
