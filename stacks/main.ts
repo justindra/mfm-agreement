@@ -3,6 +3,7 @@ import { Config } from 'sst/constructs';
 import {
   getRemovalPolicy,
   getWebDomain,
+  getWebUrl,
   HOSTED_ZONE,
   isProduction,
 } from './utils';
@@ -45,6 +46,10 @@ export function Main({ app, stack }: StackContext) {
       domainName: getWebDomain(app),
     },
     bind: [table],
+    environment: {
+      STAGE: app.stage,
+      VITE_SITE_URL: getWebUrl(app),
+    },
   });
 
   new Cron(stack, 'cron', {
@@ -59,6 +64,6 @@ export function Main({ app, stack }: StackContext) {
   });
 
   stack.addOutputs({
-    URL: site.url || 'localhost',
+    URL: site.customDomainUrl || site.url || 'localhost',
   });
 }
